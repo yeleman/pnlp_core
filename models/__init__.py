@@ -2,9 +2,8 @@
 # encoding=utf-8
 # maintainer: rgaudin
 
-from MalariaReport import *
-from MalariaUnderFiveReport import *
-from MalariaOverFiveReport import *
-from MalariaPregnantWomenReport import *
-from MalariaStockOutsReport import *
-
+from MalariaUnderFiveReport import MalariaUnderFiveReport
+from MalariaOverFiveReport import MalariaOverFiveReport
+from MalariaPregnantWomenReport import MalariaPregnantWomenReport
+from MalariaStockOutsReport import MalariaStockOutsReport
+from MalariaReport import MalariaReport
