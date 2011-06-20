@@ -7,7 +7,7 @@ from bolibana_reporting.excel import (ExcelForm, ExcelFormField, \
                                       ExcelTypeConverter)
 from bolibana_reporting.models import Period, MonthPeriod, Entity
 from pnlp_core.models import MalariaReport
-from pnlp_core.validator import MalariaReportValidator
+from pnlp_core.validators import MalariaReportValidator
 
 
 class MalariaExcelForm(ExcelForm):
@@ -236,8 +236,9 @@ class MalariaExcelForm(ExcelForm):
             return value
 
         self.errors.add(_("%(data)s is not a valid data for %(field)s") \
-                        % {'data': clean_data(data), field.display_name()), \
-                           'field': self.section_from_variable(variable)}
+                        % {'data': clean_data(data), \
+                           'field': field.display_name()}, \
+                        self.section_from_variable(variable))
 
     def is_complete(self):
         """ Test all required fields for emptyness """
