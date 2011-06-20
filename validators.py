@@ -119,8 +119,8 @@ class MalariaReportValidator(DataValidator):
         # NO FUTURE
         if self.get('year') >= date.today().year \
            and self.get('month') >= date.today().month:
-            self.errors.add(_(u"La période des données (%(period)s) " \
-                            "est dans le futur.") % \
+            self.errors.add(_(u"The period of data (%(period)s) " \
+                            "is in the future.") % \
                             {'period': u"%s %d" % \
                                        (self.get('month').__str__().zfill(2), \
                                         self.get('year'))}, 'period')
