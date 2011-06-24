@@ -262,6 +262,7 @@ class MalariaExcelForm(ExcelForm):
     def validate(self):
         """ Triggers malaria routine Validator """
         validator = MalariaReportValidator(self)
+        validator.errors.reset()
         validator.validate()
         self.errors.fusion(validator.errors)
 
